@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.ts": true,
+			"**/*.tsx": true,
+			"**/*.d.ts": true
+		}
+	},
+	"javascript.validate.enable": false
+}
+
