@@ -23,7 +23,7 @@
 
 .shop-category-products {
   display: grid;
-  margin: 20px 170px;
+  margin: 20px 120px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 80px;
 }
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 150px auto;
+  margin: 100px auto 150px auto;
   width: 233px;
   height: 69px;
   border-radius: 75px;

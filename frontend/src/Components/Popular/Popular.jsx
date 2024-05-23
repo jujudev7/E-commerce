@@ -1,5 +1,5 @@
 import data_product from "../Assets/data";
-import { Item } from "../Item/Item";
+import Item from "../Item/Item";
 import "./Popular.css";
 
 const Popular = () => {
