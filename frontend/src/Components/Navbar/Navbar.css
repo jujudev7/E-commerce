@@ -128,9 +128,9 @@
   }
 
   .nav-login-cart button {
-    width: 80px;
+    width: 86px;
     height: 35px;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .nav-login-cart img {
@@ -175,7 +175,7 @@
 
 @media (max-width: 500px) {
   .navbar {
-    width: 8px 0px;
+    padding: 8px 0px;
     gap: 0;
   }
   .nav-logo {
