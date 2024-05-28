@@ -16,9 +16,15 @@
 }
 
 .offers-left h1 {
-  color: #171717;
+  color: #ff4141;
   font-size: 2.7rem;
   font-weight: 600;
+  text-transform: uppercase;
+}
+
+.offers-left h2 {
+  color: #171717;
+  font-size: 2rem;
 }
 
 .offers-left p {
@@ -46,4 +52,129 @@
   align-items: center;
   justify-content: flex-end;
   padding-top: 50px;
+}
+
+@media (max-width: 1280px) {
+  .offers {
+    padding: 0px 80px;
+    margin-bottom: 120px;
+  }
+
+  .offers-left h1 {
+    font-size: 2.7rem;
+  }
+
+  .offers-left p {
+    font-size: 1.2rem;
+  }
+
+  .offers-right img {
+    width: 300px;
+  }
+  .offers-left button {
+    width: 220px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .offers-right {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .offers {
+    padding: 0px 60px;
+    margin-bottom: 80px;
+    height: 40vh;
+  }
+
+  .offers-left h1 {
+    font-size: 2.3rem;
+  }
+
+  .offers-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .offers-left p {
+    font-size: 1.1rem;
+  }
+
+  .offers-right img {
+    width: 200px;
+  }
+  .offers-left button {
+    width: 160px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .offers-right {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .offers {
+    margin-bottom: 60px;
+  }
+
+  .offers-left h1 {
+    font-size: 1.7rem;
+  }
+
+  .offers-left h2 {
+    font-size: 1.2rem;
+  }
+
+  .offers-left p {
+    font-size: 0.8rem;
+  }
+
+  .offers-right img {
+    width: 180px;
+  }
+  .offers-left button {
+    width: 140px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .offers-right {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .offers {
+    height: 25vh;
+    margin-bottom: 50px;
+  }
+
+  .offers-left h1 {
+    font-size: 1.2rem;
+  }
+
+  .offers-left h2 {
+    font-size: 1.1rem;
+  }
+
+  .offers-left p {
+    font-size: 0.7rem;
+  }
+
+  .offers-right img {
+    width: 120px;
+  }
+  .offers-left button {
+    width: 120px;
+    height: 25px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .offers-right {
+    padding-top: 10px;
+  }
 }
