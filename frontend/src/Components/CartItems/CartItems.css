@@ -1,5 +1,5 @@
 .cart-items {
-  margin: 100px 170px;
+  margin: 40px 150px;
 }
 
 .cart-items hr {
@@ -15,12 +15,12 @@
   gap: 75px;
   padding: 20px 0px;
   color: #454545;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 .cart-items-format {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -43,7 +43,7 @@
 
 .cart-items-down {
   display: flex;
-  margin: 100px 0px;
+  margin: 50px 0px;
 }
 
 .cart-items-total-item {
@@ -57,7 +57,11 @@
   display: flex;
   flex-direction: column;
   margin-right: 200px;
-  gap: 40px;
+  gap: 20px;
+}
+
+.cart-items-total h1 {
+  font-size: 1.7rem;
 }
 
 .cart-items-total button {
@@ -67,7 +71,7 @@
   border: none;
   background: #ff5a5a;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -83,7 +87,7 @@
 }
 
 .cart-items-promobox {
-  width: 504px;
+  width: 400px;
   margin-top: 15px;
   padding-left: 20px;
   height: 58px;
@@ -95,15 +99,109 @@
   border: none;
   background: transparent;
   font-size: 1.1rem;
-  width: 330px;
+  width: 280px;
   height: 50px;
 }
 
 .cart-items-promobox button {
-  width: 170px;
+  width: 116px;
   height: 58px;
   background: black;
   color: #fff;
   font-size: 1.1rem;
   cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .cart-items {
+    margin: 30px 50px;
+  }
+
+  .cart-items-format-main {
+    grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 20px;
+    padding: 15px 0px;
+    font-size: 1rem;
+  }
+
+  .carticon-product-icon {
+    height: 50px;
+  }
+
+  .cart-items-remove-icon {
+    margin: auto;
+  }
+
+  .cart-items-quantity {
+    width: 40px;
+    height: 30px;
+  }
+
+  .cart-items-down {
+    margin: 40px 0px;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .cart-items-total {
+    margin: 0;
+    width: 50%;
+  }
+
+  .cart-items-total button {
+    max-width: 260px;
+    height: 54px;
+    font-size: 1.1rem;
+  }
+
+  .cart-items-promobox {
+    width: auto;
+    max-width: 400px;
+  }
+
+  .cart-items-promobox input {
+    width: 100%;
+  }
+
+  .cart-items-promobox button {
+    width: 120px;
+    margin-left: -125px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cart-items-total {
+    width: 75%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-items-format-main {
+    display: none;
+    grid-template-columns: 0.5fr 3fr 0.5fr;
+    gap: 10px;
+  }
+
+  .cart-items-format-main p {
+    font-size: 0.9rem;
+  }
+
+  .cart-items-format {
+    display: grid;
+  }
+
+  .cart-items-total button {
+    font-size: 1rem;
+  }
+
+  .cart-items-down {
+    gap: 40px;
+  }
+
+  .cart-items-promocode p {
+    font-size: 0.85rem;
+  }
+  .cart-items-promobox input {
+    font-size: 1rem;
+  }
 }

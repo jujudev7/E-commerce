@@ -96,6 +96,10 @@
 }
 
 @media (max-width: 500px) {
+  .footer {
+    margin-top: 0px;
+  }
+
   .footer-logo img {
     width: 40px;
   }
