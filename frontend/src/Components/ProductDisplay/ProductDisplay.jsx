@@ -1,8 +1,8 @@
 import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import star_icon from "../Assets/star_icon.png";
 import "./ProductDisplay.css";
-import { ShopContext } from "../../Context/ShopContext";
 
 export const ProductDisplay = (props) => {
   const { product } = props;
@@ -63,13 +63,13 @@ export const ProductDisplay = (props) => {
             addToCart(product.id);
           }}
         >
-          AJOUTER AU PANIER
+          ADD TO CART
         </button>
         <p className="product-display-right-category">
-          <span>Catégorie :</span> Femme, T-Shirt, Crop Top
+          <span>Categories :</span> Women, T-Shirt, Crop Top
         </p>
         <p className="product-display-right-category">
-          <span>Tags :</span> Moderne, Nouveau
+          <span>Tags :</span> Modern, New
         </p>
       </div>
     </div>

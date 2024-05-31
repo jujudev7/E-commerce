@@ -9,12 +9,12 @@ export const CartItems = () => {
   return (
     <div className="cart-items">
       <div className="cart-items-format-main">
-        <p>Produits</p>
-        <p>Nom</p>
-        <p>Prix</p>
-        <p>Quantité</p>
+        <p>Products</p>
+        <p>Name</p>
+        <p>Price</p>
+        <p>Quantity</p>
         <p>Total</p>
-        <p>Supprimer</p>
+        <p>Delete</p>
       </div>
       <hr />
       {all_product.map((e) => {
@@ -46,16 +46,16 @@ export const CartItems = () => {
       })}
       <div className="cart-items-down">
         <div className="cart-items-total">
-          <h1>Total du Panier</h1>
+          <h1>Cart Total</h1>
           <div>
             <div className="cart-items-total-item">
-              <p>Sous-total</p>
+              <p>Subtotal</p>
               <p>{getTotalCartAmount()} €</p>
             </div>
             <hr />
             <div className="cart-items-total-item">
-              <p>Frais de Livraison</p>
-              <p>Gratuit</p>
+              <p>Shipping Fee</p>
+              <p>Free</p>
             </div>
             <hr />
             <div className="cart-items-total-item">
@@ -63,13 +63,13 @@ export const CartItems = () => {
               <h3>{getTotalCartAmount()} €</h3>
             </div>
           </div>
-          <button>PROCÉDER AU PAIEMENT</button>
+          <button>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-items-promocode">
-          <p>Si vous avez un code promo, entrez-le ici :</p>
+          <p>If you have a promo code, Enter it here</p>
           <div className="cart-items-promobox">
-            <input type="text" placeholder="CODE PROMO" />
-            <button>Ajouter</button>
+            <input type="text" placeholder="PROMO CODE" />
+            <button>Submit</button>
           </div>
         </div>
       </div>

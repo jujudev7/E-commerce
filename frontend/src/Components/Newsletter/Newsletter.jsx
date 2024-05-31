@@ -3,11 +3,11 @@ import "./Newsletter.css";
 const Newsletter = () => {
   return (
     <div className="newsletter">
-      <h1>Reçois des Offres Exclusives par Email</h1>
-      <p>Abonne-toi à notre newsletter</p>
+      <h1>Get Exclusive Offers ON Your Email</h1>
+      <p>Subscribe to our newsletter and stay updated</p>
       <div>
-        <input type="email" placeholder="Ton adresse Email" />
-        <button>Inscription</button>
+        <input type="email" placeholder="Your Email Address" />
+        <button>Subscribe</button>
       </div>
     </div>
   );

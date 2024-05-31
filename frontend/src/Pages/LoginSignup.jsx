@@ -4,21 +4,19 @@ const LoginSignup = () => {
   return (
     <div className="loginsignup">
       <div className="loginsignup-container">
-        <h1>Inscription</h1>
+        <h1>Login</h1>
         <div className="loginsignup-fields">
-          <input type="text" placeholder="Nom" />
-          <input type="email" placeholder="Adresse Email" />
-          <input type="password" placeholder="Mot de passe" />
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email Address" />
+          <input type="password" placeholder="Password" />
         </div>
-        <button>Continuer</button>
+        <button>Continue</button>
         <p className="loginsignup-login">
-          Déjà un compte ? <span>Connexion</span>
+          Already have an account? <span>Login</span>
         </p>
         <div className="loginsignup-agree">
           <input type="checkbox" name="" id="" />
-          <p>
-            En continuant, je suis d'accord avec termes of use privacy policy...
-          </p>
+          <p>By continuing, I agree to the terms of use & privacy policy.</p>
         </div>
       </div>
     </div>

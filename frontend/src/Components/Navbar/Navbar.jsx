@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="" />
-        <p>SHOPMOI</p>
+        <p>SHOPME</p>
       </div>
       <img
         className="nav-dropdown"
@@ -35,7 +35,7 @@ const Navbar = () => {
             setMenu("shop");
           }}
         >
-          <Link to="/">Boutique</Link>
+          <Link to="/">Shop</Link>
           {menu === "shop" ? <hr /> : <></>}
         </li>
         <li
@@ -43,7 +43,7 @@ const Navbar = () => {
             setMenu("men");
           }}
         >
-          <Link to="/hommes">Hommes</Link>
+          <Link to="/men">Men</Link>
           {menu === "men" ? <hr /> : <></>}
         </li>
         <li
@@ -51,7 +51,7 @@ const Navbar = () => {
             setMenu("women");
           }}
         >
-          <Link to="/femmes">Femmes</Link>
+          <Link to="/women">Women</Link>
           {menu === "women" ? <hr /> : <></>}
         </li>
         <li
@@ -59,15 +59,15 @@ const Navbar = () => {
             setMenu("kids");
           }}
         >
-          <Link to="/enfants">Enfants</Link>
+          <Link to="/kids">Kids</Link>
           {menu === "kids" ? <hr /> : <></>}
         </li>
       </ul>
       <div className="nav-login-cart">
-        <Link to="/connexion">
-          <button>Connexion</button>
+        <Link to="/login">
+          <button>Login</button>
         </Link>
-        <Link to="/panier">
+        <Link to="/cart">
           <img src={cart_icon} alt="" width="36" />
         </Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
