@@ -5,7 +5,7 @@ import { ShopContext } from "../Context/ShopContext";
 import "./CSS/ShopCategory.css";
 
 const ShopCategory = (props) => {
-  const { all_product } = useContext(ShopContext);
+  const { all_products } = useContext(ShopContext);
   return (
     <div className="shop-category">
       <img className="shop-category-banner" src={props.banner} alt="" />
@@ -18,7 +18,7 @@ const ShopCategory = (props) => {
         </div>
       </div>
       <div className="shop-category-products">
-        {all_product.map((item, i) => {
+        {all_products.map((item, i) => {
           if (props.category === item.category) {
             return (
               <Item
