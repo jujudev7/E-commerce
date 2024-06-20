@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const { log } = require("console");
 require("dotenv").config({ path: "./.env.local" }); // Charger les variables d'environnement
 
 app.use(express.json());
@@ -215,3 +216,21 @@ app.post("/login", async (req, res) => {
     res.json({ success: false, errors: "Wrong Email Id " });
   }
 });
+
+// Creating endpoint for New Collection data
+app.get("/newcollections", async (req, res) => {
+  let products = await Product.find({});
+  let newcollections = products.slice(1).slice(-8);
+  console.log("New Collections fetched");
+  res.send(newcollections);
+});
+
+// Creating endpoint for Popular in Women section
+app.get("/popularinwomen", async (req, res) => {
+  let products = await Product.find({ category: "women" });
+  let popular_in_women = products.slice(0, 4);
+  console.log("Popular in Women fetched");
+  res.send(popular_in_women);
+});
+
+// Creating endpoint for Popular in Women section
