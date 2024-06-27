@@ -18,6 +18,14 @@
   font-weight: 600;
 }
 
+.nav-logo p:hover {
+  color: #ff4141 !important;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -40,6 +48,10 @@
 .nav-menu a {
   text-decoration: none;
   color: #626262;
+}
+
+.nav-menu a:hover {
+  color: #ff4141;
 }
 
 .nav-menu hr {
@@ -70,6 +82,19 @@
 
 .nav-login-cart button:active {
   background: #f3f3f3;
+}
+
+.login:hover {
+  background: aquamarine;
+}
+
+.logout:hover {
+  color: white;
+  background: #ff4141;
+}
+
+.cart-icon:hover {
+  background: yellow;
 }
 
 .nav-cart-count {

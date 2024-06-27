@@ -32,6 +32,10 @@
   cursor: pointer;
 }
 
+.footer-links li:hover {
+  color: #ff4141;
+}
+
 .footer-social-icon {
   display: flex;
   gap: 20px;
@@ -42,6 +46,10 @@
   padding-bottom: 6px;
   background: #fbfbfb;
   border: 1px solid #ebebeb;
+}
+
+.footer-icons-container img:hover {
+  transform: scale(1.1);
 }
 
 .footer-copyright {

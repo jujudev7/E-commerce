@@ -12,6 +12,10 @@
   width: 200px;
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
 .nav-profile {
   width: 75px;
 }

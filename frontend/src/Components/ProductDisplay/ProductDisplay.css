@@ -87,6 +87,11 @@
   cursor: pointer;
 }
 
+.product-display-right-sizes div:hover {
+  color: white;
+  background: black;
+}
+
 .product-display-right button {
   padding: 25px 40px;
   width: 250px;
@@ -98,6 +103,11 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.product-display-right button:hover {
+  color: black;
+  background: aquamarine;
 }
 
 .product-display-right-category {

@@ -54,6 +54,11 @@
   cursor: pointer;
 }
 
+.newsletter div button:hover {
+  color: black;
+  background: aquamarine;
+}
+
 @media (max-width: 1280px) {
   .newsletter {
     padding: 0px 80px;

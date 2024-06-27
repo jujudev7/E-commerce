@@ -17,6 +17,10 @@
   border: 1px solid #888;
 }
 
+.shop-category-sort:hover {
+  background: aquamarine;
+}
+
 .shop-category-indexSort p span {
   font-weight: 600;
 }
@@ -26,6 +30,7 @@
   margin: 20px 120px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 80px;
+  justify-items: center;
 }
 
 .shop-category-loadmore {
@@ -40,6 +45,11 @@
   color: #787878;
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+.shop-category-loadmore:hover {
+  color: white;
+  background: #ff6464;
 }
 
 @media (max-width: 1280px) {

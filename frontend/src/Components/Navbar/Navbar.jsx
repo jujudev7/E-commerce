@@ -19,10 +19,12 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="nav-logo">
-        <img src={logo} alt="" />
-        <p>SHOPME</p>
-      </div>
+      <Link to="/" className="logo-link">
+        <div className="nav-logo">
+          <img src={logo} alt="" />
+          <p>SHOPME</p>
+        </div>
+      </Link>
       <img
         className="nav-dropdown"
         onClick={dropdown_toggle}
@@ -66,6 +68,7 @@ const Navbar = () => {
       <div className="nav-login-cart">
         {localStorage.getItem("auth-token") ? (
           <button
+            className="logout"
             onClick={() => {
               localStorage.removeItem("auth-token");
               window.location.replace("/");
@@ -75,11 +78,11 @@ const Navbar = () => {
           </button>
         ) : (
           <Link to="/login">
-            <button>Login</button>
+            <button className="login">Login</button>
           </Link>
         )}
         <Link to="/cart">
-          <img src={cart_icon} alt="" width="36" />
+          <img src={cart_icon} className="cart-icon" alt="" width="36" />
         </Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
