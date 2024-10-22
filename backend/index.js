@@ -15,7 +15,7 @@ app.use(express.json());
 // Configuration de CORS pour accepter plusieurs origines
 const allowedOrigins = [
   "https://e-commerce.julienpenna.com",
-  "http://localhost:3000",
+  // "http://localhost:3000",
 ];
 
 const corsOptions = {
@@ -59,13 +59,14 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+const baseUrl = process.env.REACT_APP_API_URL;
 
 // Creating Upload Endpoint for images
 app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:${port}/images/${req.file.filename}`,
+    image_url: `${baseUrl}/images/${req.file.filename}`,
   });
 });
 
