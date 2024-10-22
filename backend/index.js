@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Configuration de CORS pour accepter plusieurs origines
 const allowedOrigins = [
-  "https://shopme-backend.vercel.app",
+  "https://e-commerce.julienpenna.com",
   "http://localhost:3000",
 ];
 
