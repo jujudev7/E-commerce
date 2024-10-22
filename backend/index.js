@@ -1,16 +1,37 @@
-const port = 4000;
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { log } = require("console");
-require("dotenv").config({ path: "./.env.local" }); // Charger les variables d'environnement
+require("dotenv").config({ path: "./.env" }); // Charger les variables d'environnement
+
+const app = express();
+const port = process.env.PORT || 4000; // Utilise le port fourni par l'environnement ou 4000 par défaut
 
 app.use(express.json());
-app.use(cors());
+// Configuration de CORS pour accepter plusieurs origines
+
+// Configuration de CORS pour accepter plusieurs origines
+const allowedOrigins = [
+  "https://shopme-backend.vercel.app",
+  "http://localhost:3000",
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Autoriser les requêtes sans origine (comme les requêtes curl ou Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200, // Pour IE11, certains navigateurs obsolètes
+};
+
+app.use(cors(corsOptions));
 
 // Database Connection with MongoDB
 mongoose
@@ -27,7 +48,6 @@ app.get("/", (req, res) => {
 });
 
 // Image Storage Engine
-
 const storage = multer.diskStorage({
   destination: "./upload/images",
   filename: (req, file, cb) => {
@@ -41,7 +61,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Creating Upload Endpoint for images
-
 app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
@@ -51,7 +70,6 @@ app.post("/upload", upload.single("product"), (req, res) => {
 });
 
 // Schema for Creating Products
-
 const Product = mongoose.model("Product", {
   id: {
     type: Number,
@@ -98,7 +116,6 @@ app.post("/addproduct", async (req, res) => {
     id = 1;
   }
   const product = new Product({
-    // id: req.body.id,
     id: id,
     name: req.body.name,
     image: req.body.image,
@@ -116,7 +133,6 @@ app.post("/addproduct", async (req, res) => {
 });
 
 // Creating API for Deleting Products
-
 app.post("/removeproduct", async (req, res) => {
   await Product.findOneAndDelete({ id: req.body.id });
   console.log("Removed");
@@ -129,12 +145,10 @@ app.post("/removeproduct", async (req, res) => {
 // Creating API for Getting All Products
 app.get("/allproducts", async (req, res) => {
   let products = await Product.find({});
-  // console.log("All Products Fetched");
   res.send(products);
 });
 
 // Schema Creating for User model
-
 const Users = mongoose.model("Users", {
   name: {
     type: String,
@@ -159,7 +173,6 @@ const Users = mongoose.model("Users", {
 app.post("/signup", async (req, res) => {
   let check = await Users.findOne({ email: req.body.email });
   if (check) {
-    // we check if the account is already existing
     return res.status(400).json({
       success: false,
       errors: "existing user found with same email address",
@@ -213,7 +226,6 @@ app.post("/login", async (req, res) => {
 app.get("/newcollections", async (req, res) => {
   let products = await Product.find({});
   let newcollections = products.slice(1).slice(-8);
-  // console.log("New Collections fetched");
   res.send(newcollections);
 });
 
@@ -221,7 +233,6 @@ app.get("/newcollections", async (req, res) => {
 app.get("/popularinwomen", async (req, res) => {
   let products = await Product.find({ category: "women" });
   let popular_in_women = products.slice(0, 4);
-  // console.log("Popular in Women fetched");
   res.send(popular_in_women);
 });
 
@@ -243,7 +254,6 @@ const fetchUser = async (req, res, next) => {
 
 // Creating endpoint for Adding Products in CartData
 app.post("/addtocart", fetchUser, async (req, res) => {
-  // console.log(req.body, req.user);
   console.log("added", req.body.itemId);
   let userData = await Users.findOne({ _id: req.user.id });
   userData.cartData[req.body.itemId] += 1;
