@@ -68,7 +68,11 @@ export const CartItems = () => {
         <div className="cart-items-promocode">
           <p>If you have a promo code, Enter it here</p>
           <div className="cart-items-promobox">
-            <input type="text" placeholder="PROMO CODE" />
+            <input
+              type="text"
+              placeholder="PROMO CODE"
+              name="promocode-placeholder"
+            />
             <button>Submit</button>
           </div>
         </div>
